@@ -93,21 +93,3 @@ Nome: Gabriel Bueno Lourenço RA: 2023.0238.2291
 # Tela para logout
 
 ![WhatsApp Image 2024-11-29 at 01 08 52](https://github.com/user-attachments/assets/b3d19a77-57b2-4f5e-8633-d50476d5c354)
-
-
-
-
-## Documentação
-
-[Carta De Apresentacão.pdf](https://github.com/user-attachments/files/17955233/Carta.De.Apresentacao.pdf)
-
-[Declaração de uso de dados publicos.docx](https://github.com/user-attachments/files/17955239/Declaracao.de.uso.de.dados.publicos.docx)
-
-[Relatório pessoal sobre a materia.docx](https://github.com/user-attachments/files/17955244/Relatorio.pessoal.sobre.a.materia.docx)
-
-[App Financa Apresentação.pptx](https://github.com/user-attachments/files/17955247/App.Financa.Apresentacao.pptx)
-
-
-
-
-

@@ -1,0 +1,13 @@
+-- Supabase AI is experimental and may produce incorrect answers
+-- Always verify the output before executing
+
+create view 
+  viewSaldo_Final as
+select
+  te.usuario,
+  te.total_entrada,
+  ts.total_saida,
+  te.total_entrada - ts.total_saida as saldo_final
+from 
+view_EntradaPorUsuario te
+join view_GastoPorUsuario ts on te.usuario = ts. usuario;  

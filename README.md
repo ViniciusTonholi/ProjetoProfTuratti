@@ -34,6 +34,9 @@ O projeto possui as seguintes páginas principais:
 ### 4. Banco de dados
 - Todas as informações ficam armazenadas no SQL lite.
 
+### 5. Aplicação
+- No momento apenas mobile.
+
 ## Tecnologias Utilizadas
 
 - *Frontend*:
@@ -44,7 +47,6 @@ O projeto possui as seguintes páginas principais:
 - *Backend*:
   - JavaScript
   - SQLite (para armazenamento de receitas)
-
 
 
 ##Alunos:

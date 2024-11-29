@@ -1,65 +1,183 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App de Finanças</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>App de Finanças</h1>
-        <nav>
-            <button id="show-login">Login</button>
-            <button id="show-register">Cadastrar</button>
-        </nav>
-    </header>
-    <main>
-        <!-- Formulário de Login -->
-        <section id="login-section" class="form-section">
-            <h2>Login</h2>
-            <form id="login-form">
-                <input type="email" id="login-email" placeholder="E-mail" required>
-                <input type="password" id="login-password" placeholder="Senha" required>
-                <button type="submit">Entrar</button>
-            </form>
-        </section>
+import React, { useState } from 'react';
+import { StyleSheet, View, Text, TextInput, Button, FlatList, Alert } from 'react-native';
 
-        <!-- Formulário de Registro -->
-        <section id="register-section" class="form-section">
-            <h2>Cadastro</h2>
-            <form id="register-form">
-                <input type="text" id="register-username" placeholder="Nome de usuário" required>
-                <input type="email" id="register-email" placeholder="E-mail" required>
-                <input type="password" id="register-password" placeholder="Senha" required>
-                <button type="submit">Cadastrar</button>
-            </form>
-        </section>
+export default function App() {
+  const [currentScreen, setCurrentScreen] = useState('login'); // 'login', 'register', 'dashboard'
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [transactions, setTransactions] = useState([]);
+  const [description, setDescription] = useState('');
+  const [amount, setAmount] = useState('');
 
-        <!-- Dashboard -->
-        <section id="dashboard" class="form-section" style="display:none;">
-            <h2>Bem-vindo, <span id="user-name"></span></h2>
-            <button id="logout">Sair</button>
+  const balance = transactions.reduce((acc, item) => acc + parseFloat(item.amount), 0).toFixed(2);
 
-            <!-- Adicionar transação -->
-            <h3>Adicionar Transação</h3>
-            <form id="transaction-form">
-                <input type="text" id="transaction-description" placeholder="Descrição" required>
-                <input type="number" id="transaction-amount" placeholder="Valor" required>
-                <button type="submit">Adicionar</button>
-            </form>
+  const handleAddTransaction = () => {
+    if (description && amount) {
+      setTransactions([...transactions, { id: Date.now().toString(), description, amount: parseFloat(amount) }]);
+      setDescription('');
+      setAmount('');
+    } else {
+      Alert.alert('Erro', 'Preencha todos os campos para adicionar uma transação.');
+    }
+  };
 
-            <!-- Visualizar transações -->
-            <h3>Transações</h3>
-            <ul id="transaction-list"></ul>
+  const handleLogin = () => {
+    if (email && password) {
+      setCurrentScreen('dashboard');
+    } else {
+      Alert.alert('Erro', 'Preencha todos os campos para fazer login.');
+    }
+  };
 
-            <!-- Saldo -->
-            <h3>Saldo: <span id="balance">R$0.00</span></h3>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 App de Finanças</p>
-    </footer>
-    <script src="scripts.js"></script>
-</body>
-</html>
+  const handleRegister = () => {
+    if (username && email && password) {
+      Alert.alert('Sucesso', 'Cadastro realizado com sucesso!');
+      setCurrentScreen('login');
+    } else {
+      Alert.alert('Erro', 'Preencha todos os campos para se cadastrar.');
+    }
+  };
+
+  const handleLogout = () => {
+    setCurrentScreen('login');
+    setUsername('');
+    setEmail('');
+    setPassword('');
+    setTransactions([]);
+  };
+
+  if (currentScreen === 'login') {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.title}>Login</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="E-mail"
+          keyboardType="email-address"
+          value={email}
+          onChangeText={setEmail}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Senha"
+          secureTextEntry
+          value={password}
+          onChangeText={setPassword}
+        />
+        <Button title="Entrar" onPress={handleLogin} />
+        <Button title="Cadastrar" onPress={() => setCurrentScreen('register')} />
+      </View>
+    );
+  }
+
+  if (currentScreen === 'register') {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.title}>Cadastro</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Nome de usuário"
+          value={username}
+          onChangeText={setUsername}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="E-mail"
+          keyboardType="email-address"
+          value={email}
+          onChangeText={setEmail}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Senha"
+          secureTextEntry
+          value={password}
+          onChangeText={setPassword}
+        />
+        <Button title="Cadastrar" onPress={handleRegister} />
+        <Button title="Voltar" onPress={() => setCurrentScreen('login')} />
+      </View>
+    );
+  }
+
+  if (currentScreen === 'dashboard') {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.title}>Bem-vindo, {username || 'Usuário'}</Text>
+        <Button title="Sair" onPress={handleLogout} />
+
+        <Text style={styles.subtitle}>Adicionar Transação</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Descrição"
+          value={description}
+          onChangeText={setDescription}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Valor"
+          keyboardType="numeric"
+          value={amount}
+          onChangeText={setAmount}
+        />
+        <Button title="Adicionar" onPress={handleAddTransaction} />
+
+        <Text style={styles.subtitle}>Transações</Text>
+        <FlatList
+          data={transactions}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => (
+            <Text style={styles.transactionItem}>
+              {item.description}: R${item.amount.toFixed(2)}
+            </Text>
+          )}
+        />
+
+        <Text style={styles.balance}>Saldo: R${balance}</Text>
+      </View>
+    );
+  }
+
+  return null;
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    justifyContent: 'center',
+    backgroundColor: '#f0f0f0',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  subtitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginTop: 20,
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 5,
+    padding: 10,
+    marginBottom: 10,
+    backgroundColor: '#fff',
+  },
+  transactionItem: {
+    padding: 10,
+    backgroundColor: '#e9e9e9',
+    marginBottom: 5,
+    borderRadius: 5,
+  },
+  balance: {
+    marginTop: 20,
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+});

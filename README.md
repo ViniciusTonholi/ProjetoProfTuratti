@@ -49,7 +49,7 @@ O projeto possui as seguintes páginas principais:
   - SQLite (para armazenamento de receitas)
 
 
-##Alunos:
+### Integrantes do projeto:
 
 Nome: Vinicius Tonholi de Almeida RA: 2023.0273.8109 
 Nome: Diego Wilkles Menezes RA: 2023.0842.8667

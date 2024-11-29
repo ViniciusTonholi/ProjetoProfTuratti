@@ -21,10 +21,10 @@ O projeto possui as seguintes páginas principais:
 ### 1. index.js
 - Configura o servidor principal.
 
-### 2. Rotas (routes/users.js e routes/transactions.js)
+### 2. Rotas 
 - Gerencia endpoints para usuários e transações.
 
-### 3. Controladores (controllers/userController.js e controllers/transactionController.js)
+### 3. Controladores
 - Contêm a lógica principal de cada funcionalidade.
 
 

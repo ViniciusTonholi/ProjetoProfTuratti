@@ -48,3 +48,41 @@ Nome: Diego Wilkles Menezes RA: 2023.0842.8667
 Nome: João Silva RA: 2023.0972.0371
 Nome: André Luís Rodrigues RA: 2021.0873.7828
 Nome: Gabriel Bueno Lourenço RA: 2023.0238.2291
+
+
+
+# Demonstração do aplicativo no smartphone
+
+
+# Tela de cadastro
+
+![WhatsApp Image 2024-11-29 at 01 08 50](https://github.com/user-attachments/assets/18e74e2b-0efa-4af4-ad88-fd062a355339)
+
+# Tela de login
+
+![WhatsApp Image 2024-11-29 at 01 08 50 (1)](https://github.com/user-attachments/assets/1b48929f-11b3-4636-ac77-6dbab1f9ae18)
+
+# Grid de despesas e valores de entrada e saida
+
+![WhatsApp Image 2024-11-29 at 01 08 50 (2)](https://github.com/user-attachments/assets/ba3c48cf-1cf7-4f2c-bea2-8c50a9b41e4c)
+
+# Grid de despesas e valores de entrada e saida
+
+![WhatsApp Image 2024-11-29 at 01 08 51](https://github.com/user-attachments/assets/f551b698-2d5f-4b55-af83-1497668726f6)
+
+# Grid de despesas e valores de entrada e saida
+
+![WhatsApp Image 2024-11-29 at 01 08 51 (1)](https://github.com/user-attachments/assets/23a80d53-9d6c-46fc-8a52-943fec763ae4)
+
+# Tela para adicionar uma entrada ou saida
+
+![WhatsApp Image 2024-11-29 at 01 08 51 (2)](https://github.com/user-attachments/assets/912fd0fc-bfc6-4ebf-9838-9ce603045aef)
+
+# Tela para editar uma entrada ou saida
+
+![WhatsApp Image 2024-11-29 at 01 08 51 (3)](https://github.com/user-attachments/assets/424d06ca-b548-4ab4-b992-0119ff357dc9)
+
+# Tela para logout
+
+![WhatsApp Image 2024-11-29 at 01 08 52](https://github.com/user-attachments/assets/b3d19a77-57b2-4f5e-8633-d50476d5c354)
+

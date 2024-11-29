@@ -29,7 +29,7 @@ O projeto possui as seguintes páginas principais:
 - Perimite que o usuario apague um registro feito.
 
 ### 3. Logout
-- O usuario pode excluir sua conta ou faer um logout.
+- O usuario pode excluir sua conta ou fazer um logout.
 
 ### 4. Banco de dados
 - Todas as informações ficam armazenadas no SQL lite.

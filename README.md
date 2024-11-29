@@ -18,15 +18,21 @@ O site permite aos usuários:
 
 O projeto possui as seguintes páginas principais:
 
-### 1. index.js
-- Configura o servidor principal.
+### 1. Cadastro
+- Tela para cadastrar um novo usuario;
+- Tela para que o surio possa efetuar o login em uma conta ja cadastrada.
 
-### 2. Rotas 
-- Gerencia endpoints para usuários e transações.
+### 2. Registros 
+- Gerencia o controle de entrada e saidas;
+- Permite adicionar uma nova despesça;
+- Permite editar uma despesa já adiconada;
+- Perimite que o usuario apague um registro feito.
 
-### 3. Controladores
-- Contêm a lógica principal de cada funcionalidade.
+### 3. Logout
+- O usuario pode excluir sua conta ou faer um logout.
 
+### 4. Banco de dados
+- Todas as informações ficam armazenadas no SQL lite.
 
 ## Tecnologias Utilizadas
 

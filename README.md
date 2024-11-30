@@ -41,6 +41,7 @@ O projeto possui as seguintes páginas principais:
 
 - *Frontend*:
   - HTML5
+  - Expo
   - CSS
   - JavaScript
   

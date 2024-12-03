@@ -1,6 +1,0 @@
-CREATE TABLE IF NOT EXISTS users (
-    id INTEGER PRIMARY KEY AUTOINCREMENT, -- Identificador único
-    username TEXT NOT NULL,               -- Nome do usuário
-    email TEXT UNIQUE NOT NULL,           -- E-mail (deve ser único)
-    password TEXT NOT NULL                -- Senha
-);
